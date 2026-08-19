@@ -1,0 +1,47 @@
+---
+const transformations = [
+	{
+		before: '“Nobody knows why this exists.”',
+		after: 'Institutional rationale has been successfully decoupled from implementation.',
+	},
+	{
+		before: '“Nobody wants to make the decision.”',
+		after: 'Ownership is distributed across a resilient mesh of stakeholders.',
+	},
+	{
+		before: '“We’re guessing.”',
+		after: 'Forecasts are produced through Predictive Intent Resolution™.',
+	},
+];
+---
+
+<section class="border-b border-line bg-surface">
+	<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+		<div class="mx-auto max-w-2xl text-center" data-reveal>
+			<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-accent uppercase">Enterprise Euphemism Layer™</p>
+			<h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+				Truth in. <span class="accent-word">Language</span> out.
+			</h2>
+			<p class="mt-5 text-lg leading-relaxed text-muted">
+				Uncomfortable observations are translated into board-ready phrasing. Meaning is preserved
+				end-to-end — it is simply no longer legible.
+			</p>
+		</div>
+
+		<div class="mx-auto mt-14 max-w-3xl space-y-10">
+			{transformations.map((t) => (
+				<div class="grid items-center gap-3 sm:grid-cols-[1fr_auto_1fr] sm:gap-6" data-reveal>
+					<p class="font-mono text-sm leading-relaxed text-muted sm:text-right">{t.before}</p>
+					<span class="justify-self-center font-mono text-faint" aria-hidden="true">
+						<span class="hidden sm:inline">→</span><span class="sm:hidden">↓</span>
+					</span>
+					<p class="accent-word text-xl leading-snug sm:text-[1.35rem]">{t.after}</p>
+				</div>
+			))}
+		</div>
+
+		<p class="mt-14 text-center font-mono text-xs text-faint" data-reveal>
+			Lossless in both directions. Decryption sold separately.
+		</p>
+	</div>
+</section>

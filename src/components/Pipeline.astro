@@ -1,0 +1,103 @@
+---
+const stages = [
+	{
+		num: '01',
+		name: 'Grievance Ingestion',
+		desc: 'Structured intake for anything that annoys you professionally. Rants, transcripts, and sighs accepted.',
+	},
+	{
+		num: '02',
+		name: 'Pattern Extraction',
+		desc: 'Isolates the organizational dysfunction beneath the frustration.',
+	},
+	{
+		num: '03',
+		name: 'Brandification',
+		desc: 'Names the dysfunction something fundable.',
+	},
+	{
+		num: '04',
+		name: 'Enterprise Euphemism',
+		desc: 'Removes the discomfort. Preserves the truth.',
+	},
+	{
+		num: '05',
+		name: 'Feature Synthesis',
+		desc: 'Converts each symptom into a trademarked capability.',
+	},
+	{
+		num: '06',
+		name: 'Credibility Calibration',
+		desc: 'Tunes plausibility to specification.',
+	},
+	{
+		num: '07',
+		name: 'Deployment',
+		desc: 'Ships a landing page indistinguishable from the real thing.',
+	},
+];
+---
+
+<section id="pipeline" class="bg-night text-paper">
+	<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+		<div class="max-w-2xl" data-reveal>
+			<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-night-muted uppercase">The pipeline</p>
+			<h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+				From grievance to <span class="accent-word">go-to-market</span>.
+			</h2>
+			<p class="mt-5 text-lg leading-relaxed text-night-muted">
+				What was once a creative act is now a managed workflow. Seven stages. Full observability.
+				No step requires inspiration.
+			</p>
+		</div>
+
+		<div class="mt-14 grid gap-12 lg:grid-cols-[5fr_4fr] lg:gap-16">
+			<ol class="space-y-0" data-reveal>
+				{stages.map((stage) => (
+					<li class="group flex gap-5 border-t border-night-line py-5 last:border-b">
+						<span class="pt-0.5 font-mono text-xs text-night-muted/70">{stage.num}</span>
+						<div>
+							<h3 class="font-mono text-sm font-medium tracking-[0.14em] uppercase">{stage.name}</h3>
+							<p class="mt-1.5 text-[15px] leading-relaxed text-night-muted">{stage.desc}</p>
+						</div>
+					</li>
+				))}
+			</ol>
+
+			<!-- Worked example -->
+			<div data-reveal>
+				<div class="rounded-xl border border-night-line bg-night-soft lg:sticky lg:top-24">
+					<div class="flex items-center justify-between border-b border-night-line px-5 py-3">
+						<span class="font-mono text-[11px] tracking-[0.18em] text-night-muted uppercase">Pipeline trace</span>
+						<span class="font-mono text-[11px] text-night-muted">run 4,217</span>
+					</div>
+					<div class="space-y-4 px-5 py-5 font-mono text-[13px] leading-relaxed sm:px-6">
+						<div>
+							<p class="text-[11px] tracking-[0.14em] text-night-muted/70 uppercase">Input</p>
+							<p class="mt-1">“Every simple internal tool eventually becomes a platform.”</p>
+						</div>
+						<div>
+							<p class="text-[11px] tracking-[0.14em] text-night-muted/70 uppercase">Pattern detected</p>
+							<p class="mt-1 text-night-muted">Utility mistaken for a mandate.</p>
+						</div>
+						<div>
+							<p class="text-[11px] tracking-[0.14em] text-night-muted/70 uppercase">Brand</p>
+							<p class="mt-1">Eventual™ — the internal tooling platform your internal tool was always becoming.</p>
+						</div>
+						<div>
+							<p class="text-[11px] tracking-[0.14em] text-night-muted/70 uppercase">Features synthesized</p>
+							<p class="mt-1 text-night-muted">Roadmap Gravity™ · Scope Assurance™ · Stakeholder Accretion™ + 11 more</p>
+						</div>
+						<div>
+							<p class="text-[11px] tracking-[0.14em] text-night-muted/70 uppercase">Status</p>
+							<p class="mt-1 flex items-center gap-2">
+								<span class="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true"></span>
+								Deployed — 34 seconds ago
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,52 @@
+---
+const faqs = [
+	{
+		q: 'Is Satire-as-a-Service™ itself satire?',
+		a: 'It is a fully managed platform with an uptime SLA and a procurement-ready security questionnaire. We encourage you to draw no further conclusions.',
+	},
+	{
+		q: 'Do I need to be funny?',
+		a: 'No. Humor is handled at the infrastructure layer. You supply the grievance; comedic timing is provisioned automatically and scales with load.',
+	},
+	{
+		q: 'What happens if a generated product becomes real?',
+		a: 'This is classified as a Category Escape™ and is covered under Enterprise plans. Several of our outputs currently have customers. Two have investors. We are monitoring the situation.',
+	},
+	{
+		q: 'Can it satirize Satire-as-a-Service™?',
+		a: 'Yes. It already has. See deployment SAAS-0001.',
+	},
+];
+---
+
+<section id="faq" class="border-b border-line bg-surface">
+	<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+		<div class="grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
+			<div data-reveal>
+				<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-accent uppercase">FAQ</p>
+				<h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+					Frequently asked <span class="accent-word">questions</span>.
+				</h2>
+				<p class="mt-5 text-[17px] leading-relaxed text-muted">
+					Asked frequently. Answered once, then cached.
+				</p>
+			</div>
+
+			<div data-reveal>
+				{faqs.map((faq) => (
+					<details class="group border-t border-line py-1 last:border-b">
+						<summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-[15px] font-medium [&::-webkit-details-marker]:hidden">
+							{faq.q}
+							<span class="text-faint transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+								</svg>
+							</span>
+						</summary>
+						<p class="pb-5 text-[15px] leading-relaxed text-muted">{faq.a}</p>
+					</details>
+				))}
+			</div>
+		</div>
+	</div>
+</section>

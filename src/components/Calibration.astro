@@ -1,0 +1,107 @@
+---
+---
+
+<section class="border-b border-line">
+	<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+		<div class="grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
+			<div data-reveal>
+				<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-accent uppercase">Credibility Calibration™</p>
+				<h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+					Exactly as <span class="accent-word">plausible</span> as you need it to be.
+				</h2>
+				<p class="mt-5 text-[17px] leading-relaxed text-muted">
+					A single control governs how believable the generated product appears — from obvious parody
+					to a startup with a booth at your next conference. Most customers converge on the
+					recommended setting.
+				</p>
+				<p class="mt-4 text-[17px] leading-relaxed text-muted">
+					Satire performs best when someone could conceivably expense it.
+				</p>
+			</div>
+
+			<div data-reveal>
+				<div class="rounded-xl border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(26,25,20,0.04),0_12px_32px_-16px_rgba(26,25,20,0.14)] sm:p-8">
+					<div class="flex items-baseline justify-between">
+						<span class="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">Credibility</span>
+						<span class="font-mono text-3xl font-medium tabular-nums" id="cal-value" aria-hidden="true">82%</span>
+					</div>
+
+					<div class="relative mt-8 pb-1">
+						<!-- Recommended marker at 82% -->
+						<div class="pointer-events-none absolute -top-5 left-[82%] -translate-x-1/2" aria-hidden="true">
+							<span class="font-mono text-[10px] tracking-[0.14em] text-accent uppercase">Rec.</span>
+						</div>
+						<div class="pointer-events-none absolute top-2 left-[82%] h-3 w-px -translate-x-1/2 bg-accent/50" aria-hidden="true"></div>
+						<input
+							type="range"
+							id="cal-slider"
+							class="calibration"
+							min="0"
+							max="100"
+							value="82"
+							step="1"
+							aria-label="Credibility level"
+							aria-describedby="cal-caption"
+						/>
+					</div>
+
+					<div class="mt-3 flex justify-between font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+						<span>Obvious parody</span>
+						<span>Plausible startup</span>
+					</div>
+
+					<div class="mt-7 min-h-16 border-t border-line pt-5">
+						<p class="text-[15px] leading-relaxed text-muted" id="cal-caption" aria-live="polite">
+							<span class="font-medium text-ink">Recommended.</span> Reads as a well-funded Series B.
+							Procurement will not ask questions. Neither will anyone else, which is the point.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const slider = document.getElementById('cal-slider') as HTMLInputElement | null;
+	const value = document.getElementById('cal-value');
+	const caption = document.getElementById('cal-caption');
+
+	const bands: Array<{ max: number; label: string; text: string }> = [
+		{
+			max: 20,
+			label: 'Not recommended.',
+			text: 'Nobody will believe this. Comedically safe, commercially wasteful. The market opportunity is being left on the table.',
+		},
+		{
+			max: 45,
+			label: 'Low fidelity.',
+			text: 'Detectable as satire within one scroll. Suitable for internal audiences and people who read footers.',
+		},
+		{
+			max: 69,
+			label: 'Approaching viability.',
+			text: 'Reads as a seed-stage startup. Some visitors will ask about pricing. Answer them.',
+		},
+		{
+			max: 89,
+			label: 'Recommended.',
+			text: 'Reads as a well-funded Series B. Procurement will not ask questions. Neither will anyone else, which is the point.',
+		},
+		{
+			max: 100,
+			label: 'Caution.',
+			text: 'At this level the product may attract inbound acquisition interest. Satirical intent cannot be guaranteed beyond Series A.',
+		},
+	];
+
+	if (slider && value && caption) {
+		const update = () => {
+			const level = Number(slider.value);
+			value.textContent = `${level}%`;
+			const band = bands.find((b) => level <= b.max) ?? bands[bands.length - 1];
+			caption.innerHTML = `<span class="font-medium text-ink">${band.label}</span> ${band.text}`;
+		};
+		slider.addEventListener('input', update);
+	}
+</script>

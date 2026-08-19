@@ -1,0 +1,80 @@
+---
+const deployments = [
+	'Endless Buzzwords™',
+	'Legacy-as-a-Service™',
+	'ContextMaxxing™',
+	"Satire-as-a-Service™"
+];
+---
+
+<section id="top" class="relative overflow-hidden">
+	<div class="mx-auto max-w-6xl px-5 pt-20 pb-16 sm:px-8 sm:pt-28 sm:pb-24">
+		<div class="mx-auto max-w-3xl text-center">
+			<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
+				The satire infrastructure platform
+			</p>
+			<h1 class="mt-6 text-[2.6rem] leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl">
+				Turn organizational dysfunction into <span class="accent-word text-accent">enterprise-grade</span> commentary.
+			</h1>
+			<p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted text-pretty">
+				Describe what annoys you. Satire-as-a-Service™ extracts the underlying pattern, gives it a
+				venture-backable name, and ships it as a fully positioned B2B product — features, metrics,
+				and a landing page indistinguishable from the real thing.
+			</p>
+			<div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+				<a
+					href="#cta"
+					class="w-full rounded-lg bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent sm:w-auto"
+					>Submit a grievance</a
+				>
+				<a
+					href="#pipeline"
+					class="w-full rounded-lg border border-line bg-surface px-6 py-3 text-sm font-medium transition-colors hover:border-ink sm:w-auto"
+					>See the pipeline</a
+				>
+			</div>
+			<p class="mt-4 font-mono text-xs text-faint">Average time from annoyance to positioning: 4 minutes.</p>
+		</div>
+
+		<!-- Live ingestion preview -->
+		<div class="mx-auto mt-16 max-w-2xl" data-reveal>
+			<div class="overflow-hidden rounded-xl border border-line bg-surface shadow-[0_1px_2px_rgba(26,25,20,0.04),0_12px_32px_-16px_rgba(26,25,20,0.18)]">
+				<div class="flex items-center justify-between border-b border-line px-5 py-3">
+					<span class="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">Grievance Ingestion™</span>
+					<span class="flex items-center gap-2 font-mono text-[11px] text-muted">
+						<span class="live-dot h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span> Live
+					</span>
+				</div>
+				<div class="px-5 py-5 font-mono text-[13px] leading-relaxed sm:px-6">
+					<p class="text-muted">&gt; “Every status update meeting could have been a sentence.”</p>
+					<dl class="mt-5 grid gap-x-6 gap-y-2 sm:grid-cols-[max-content_1fr]">
+						<dt class="text-faint">PATTERN</dt>
+						<dd>Ritualized synchronization without information transfer</dd>
+						<dt class="text-faint">BRAND</dt>
+						<dd>Alignment Continuity™</dd>
+						<dt class="text-faint">CREDIBILITY</dt>
+						<dd>82% — expensable</dd>
+						<dt class="text-faint">STATUS</dt>
+						<dd class="flex items-center gap-2">
+							<span class="h-1.5 w-1.5 rounded-full bg-emerald-600" aria-hidden="true"></span> Deployed
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Deployment strip -->
+	<div class="border-t border-line">
+		<div class="mx-auto max-w-6xl px-5 py-8 sm:px-8">
+			<p class="text-center font-mono text-[11px] tracking-[0.22em] text-faint uppercase">
+				Deployments running on the platform
+			</p>
+			<ul class="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
+				{deployments.map((name) => (
+					<li class="text-sm font-semibold tracking-tight text-muted/80">{name}</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</section>

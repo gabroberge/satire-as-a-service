@@ -1,0 +1,68 @@
+---
+const columns = [
+	{
+		heading: 'Platform',
+		links: [
+			'Grievance Ingestion™',
+			'Brandification Engine™',
+			'Enterprise Euphemism Layer™',
+			'Credibility Calibration™',
+			'Recursive Satire™',
+		],
+	},
+	{
+		heading: 'Company',
+		links: [
+			'About',
+			'Careers — hiring one person to keep noticing things',
+			'Press kit',
+			'Brand guidelines (47 pages)',
+		],
+	},
+	{
+		heading: 'Resources',
+		links: [
+			'Grievance API reference',
+			'Trust Center',
+			'Status — all systems plausible',
+			'Glossary of euphemisms',
+		],
+	},
+];
+---
+
+<footer class="border-t border-night-line bg-night text-paper">
+	<div class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+		<div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+			<div>
+				<div class="flex items-center gap-2.5">
+					<span
+						class="flex h-7 w-7 items-center justify-center rounded-md bg-paper font-serif text-sm text-ink"
+						aria-hidden="true">™</span
+					>
+					<span class="text-[15px] font-semibold tracking-tight">Satire-as-a-Service<span class="align-super text-[9px]">™</span></span>
+				</div>
+				<p class="mt-4 max-w-xs text-sm leading-relaxed text-night-muted">
+					The satire infrastructure platform. Finally, SaaS that knows it’s SaaS.
+				</p>
+			</div>
+			{columns.map((col) => (
+				<nav aria-label={col.heading}>
+					<h3 class="font-mono text-[11px] tracking-[0.18em] text-night-muted uppercase">{col.heading}</h3>
+					<ul class="mt-4 space-y-2.5">
+						{col.links.map((link) => (
+							<li>
+								<a href="#top" class="text-sm text-night-muted transition-colors hover:text-paper">{link}</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			))}
+		</div>
+
+		<div class="mt-14 flex flex-col gap-3 border-t border-night-line pt-8 sm:flex-row sm:items-center sm:justify-between">
+			<p class="text-xs text-night-muted">© 2026 Satire-as-a-Service, Inc. All jokes reserved.</p>
+			<p class="font-mono text-[11px] text-night-muted/70">Built with one human grievance.</p>
+		</div>
+	</div>
+</footer>

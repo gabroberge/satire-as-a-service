@@ -1,0 +1,121 @@
+---
+const tiers = [
+	{
+		name: 'Observer',
+		price: 'Free',
+		unit: 'forever',
+		blurb: 'For individuals who have noticed something.',
+		features: [
+			'1 grievance per month',
+			'Credibility capped at 40%',
+			'Output visibly watermarked as satire',
+			'Recursion depth 0',
+			'Community euphemisms only',
+		],
+		cta: 'Start noticing',
+		featured: false,
+	},
+	{
+		name: 'Practitioner',
+		price: '$89',
+		unit: 'per grievance',
+		blurb: 'For teams with a sustained supply of dysfunction.',
+		features: [
+			'Unlimited grievances',
+			'Credibility up to 82% (recommended)',
+			'Full Enterprise Euphemism Layer™',
+			'Recursion depth 2',
+			'Trademark symbols: unmetered',
+			'Dystopia Gradient™ presets',
+		],
+		cta: 'Submit a grievance',
+		featured: true,
+	},
+	{
+		name: 'Enterprise',
+		price: 'Custom',
+		unit: 'priced by dysfunction',
+		blurb: 'For organizations that are the grievance.',
+		features: [
+			'Credibility uncapped',
+			'Recursion depth unbounded (waiver required)',
+			'Dedicated Grievance Success Manager',
+			'Your dysfunction, white-labeled',
+			'Category Escape™ coverage',
+			'Quarterly sincerity audits',
+		],
+		cta: 'Talk to sales',
+		featured: false,
+	},
+];
+---
+
+<section id="pricing" class="border-b border-line">
+	<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+		<div class="mx-auto max-w-2xl text-center" data-reveal>
+			<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-accent uppercase">Pricing</p>
+			<h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+				Pay for <span class="accent-word">plausibility</span>.
+			</h2>
+			<p class="mt-5 text-lg leading-relaxed text-muted">
+				Credibility is the unit of value. Everything else is included.
+			</p>
+		</div>
+
+		<div class="mt-14 grid gap-5 lg:grid-cols-3">
+			{tiers.map((tier) => (
+				<article
+					class:list={[
+						'flex flex-col rounded-xl border p-7',
+						tier.featured
+							? 'border-ink bg-night text-paper shadow-[0_16px_40px_-20px_rgba(26,25,20,0.4)]'
+							: 'border-line bg-surface',
+					]}
+					data-reveal
+				>
+					<div class="flex items-center justify-between">
+						<h3 class="text-base font-semibold tracking-tight">{tier.name}</h3>
+						{tier.featured && (
+							<span class="rounded-full border border-night-line px-2.5 py-1 font-mono text-[10px] tracking-[0.14em] text-night-muted uppercase">
+								Recommended
+							</span>
+						)}
+					</div>
+					<p class:list={['mt-2 text-sm', tier.featured ? 'text-night-muted' : 'text-muted']}>{tier.blurb}</p>
+					<p class="mt-6">
+						<span class="text-4xl font-semibold tracking-tight">{tier.price}</span>
+						<span class:list={['ml-2 text-sm', tier.featured ? 'text-night-muted' : 'text-muted']}>{tier.unit}</span>
+					</p>
+					<ul
+						class:list={[
+							'mt-7 space-y-2.5 border-t pt-6 text-[14px] leading-relaxed',
+							tier.featured ? 'border-night-line text-night-muted' : 'border-line text-muted',
+						]}
+					>
+						{tier.features.map((feature) => (
+							<li class="flex gap-2.5">
+								<span class:list={['mt-px', tier.featured ? 'text-paper/60' : 'text-accent']} aria-hidden="true">·</span>
+								{feature}
+							</li>
+						))}
+					</ul>
+					<a
+						href="#cta"
+						class:list={[
+							'mt-8 rounded-lg px-5 py-2.5 text-center text-sm font-medium transition-colors',
+							tier.featured
+								? 'bg-paper text-ink hover:bg-white'
+								: 'border border-line hover:border-ink',
+						]}
+					>
+						{tier.cta}
+					</a>
+				</article>
+			))}
+		</div>
+
+		<p class="mt-10 text-center font-mono text-xs text-faint" data-reveal>
+			All plans include one original thought. You provide it.
+		</p>
+	</div>
+</section>

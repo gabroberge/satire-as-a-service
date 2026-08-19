@@ -1,0 +1,25 @@
+---
+const metrics = [
+	{ value: '↑ 418%', label: 'Satirical throughput' },
+	{ value: '1', label: 'Original observations' },
+	{ value: '17', label: 'Generated features' },
+	{ value: '94%', label: 'Stakeholder amusement' },
+	{ value: '—', label: 'Methodology' },
+];
+---
+
+<section class="border-b border-line bg-night text-paper">
+	<div class="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16" data-reveal>
+		<p class="font-mono text-[11px] tracking-[0.22em] text-night-muted uppercase">
+			Platform performance · Q2 2026 · unaudited by design
+		</p>
+		<dl class="mt-8 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+			{metrics.map((metric) => (
+				<div>
+					<dd class="font-mono text-3xl font-medium tabular-nums sm:text-4xl">{metric.value}</dd>
+					<dt class="mt-2 text-sm text-night-muted">{metric.label}</dt>
+				</div>
+			))}
+		</dl>
+	</div>
+</section>

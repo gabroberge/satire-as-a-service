@@ -1,0 +1,58 @@
+---
+const trace = [
+	{ label: 'Input', value: '“People keep turning everything into SaaS.”', mono: true },
+	{ label: 'Pattern detected', value: 'Productization of increasingly unnecessary professional activities.' },
+	{ label: 'Category opportunity', value: 'Satire infrastructure.' },
+	{ label: 'Brand', value: 'Satire-as-a-Service™', strong: true },
+	{ label: 'Credibility', value: '82% — expensable' },
+	{ label: 'Recursion depth', value: '1 and holding' },
+];
+---
+
+<section class="border-b border-line">
+	<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+		<div class="mx-auto max-w-2xl text-center" data-reveal>
+			<p class="font-mono text-[11px] font-medium tracking-[0.22em] text-accent uppercase">Deployment SAAS-0001</p>
+			<h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+				Every deployment starts with a <span class="accent-word">grievance</span>.
+			</h2>
+			<p class="mt-5 text-lg leading-relaxed text-muted">Including the first one.</p>
+		</div>
+
+		<div class="mx-auto mt-14 max-w-2xl" data-reveal>
+			<div class="overflow-hidden rounded-xl border border-line bg-surface shadow-[0_1px_2px_rgba(26,25,20,0.04),0_12px_32px_-16px_rgba(26,25,20,0.18)]">
+				<div class="flex items-center justify-between border-b border-line px-5 py-3 sm:px-6">
+					<span class="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">Pipeline trace · run 0001</span>
+					<span class="font-mono text-[11px] text-muted">archived</span>
+				</div>
+				<div class="px-5 py-6 sm:px-6">
+					<ol class="space-y-5">
+						{trace.map((step, i) => (
+							<li class="grid gap-1 sm:grid-cols-[180px_1fr] sm:gap-6">
+								<p class="font-mono text-[11px] tracking-[0.14em] text-faint uppercase sm:pt-0.5">
+									{step.label}
+								</p>
+								<p
+									class:list={[
+										'text-[15px] leading-relaxed',
+										step.mono && 'font-mono text-[13px]',
+										step.strong ? 'text-lg font-semibold tracking-tight' : 'text-ink',
+									]}
+								>
+									{step.value}
+								</p>
+							</li>
+						))}
+					</ol>
+					<div class="mt-6 flex items-center justify-between border-t border-line pt-5">
+						<p class="font-mono text-[11px] tracking-[0.14em] text-faint uppercase">Status</p>
+						<p class="flex items-center gap-2 font-mono text-[13px]">
+							<span class="live-dot h-1.5 w-1.5 rounded-full bg-emerald-600" aria-hidden="true"></span>
+							Deployed — you are viewing it
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
