@@ -24,6 +24,14 @@ const cases = [
 		pattern: 'Judgment outsourced one document at a time.',
 		line: 'More context. Fewer questions. Less you.',
 	},
+	{
+		id: 'SAAS-0005',
+		brand: 'Ownership-as-a-Service™',
+		category: 'Ownership infrastructure',
+		input: '“Nobody owns it, so the same person always does.”',
+		pattern: 'Ambiguous responsibility routes to whoever historically notices the gap.',
+		line: 'The work always finds an owner.',
+	},
 ];
 ---
 
@@ -40,7 +48,7 @@ const cases = [
 			</p>
 		</div>
 
-		<div class="mt-14 grid gap-5 lg:grid-cols-3">
+		<div class="mt-14 grid gap-5 md:grid-cols-2">
 			{cases.map((c) => (
 				<article class="flex flex-col rounded-xl border border-line bg-surface" data-reveal>
 					<div class="flex items-center justify-between border-b border-line px-6 py-3.5">
